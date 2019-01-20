@@ -133,6 +133,7 @@ module ActiveJob
             queue_url: queue_url(queue_name),
             message_body: serialized_job,
             delay_seconds: calculate_delay(timestamp),
+            message_group_id: '1',
             message_attributes: {
               "message-digest".freeze => {
                 string_value: message_digest(serialized_job),
